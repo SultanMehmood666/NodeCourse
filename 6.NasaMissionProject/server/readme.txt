@@ -63,3 +63,4 @@ Theory:
 When we start server our node js create a master file and run it. But there is a function inside of cluster module called fork()
 This fork we can use it many time we want it create copy of that msater file which is called worker and these files run along side with
 master file.  
+This is also called round robin approach means if you create 2 forks() and there are 3 request. 1 req will resolved by 1 worker and 2 by 2nd worker and 3rd is by 1st worker.
