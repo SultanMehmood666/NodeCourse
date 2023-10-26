@@ -90,3 +90,5 @@ It means its will responsed with web workers Api in web browser
 Worker Threads were introduced due to v8 feature called v8 isolatess.
 We cauld think it as isolated sandboxes that run javascripts code independently of each other.
 Worker threads use this and run code side by side in isolation
+
+unlike cluster module worker thread share memory between themselfs.
