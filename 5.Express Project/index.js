@@ -7,7 +7,7 @@ const getMehmood = require('./controller/getMehmoodController');
 const ViewController = require('./controller/getViewController');
 const postDataController = require('./controller/postDataController'); 
 const getFile = require('./controller/getFileController');
-
+const getMessages = require('./controller/getMessagesController');
 
 const Port = 3001
 const MehmoodRouter = express.Router();
@@ -30,6 +30,20 @@ app.get("/", ViewController.View);
 app.post('/post', postDataController.postData);
 
 app.get('/SendFile', getFile.getFile);
+
+app.get('/Messages', getMessages.getMessages);
+
+// To ue Hbs handle bat
+app.set('view engine', 'hbs');
+// also set location of Views i.e hbs files
+app.set('Views', path.join(__dirname,'Views'));
+
+app.get("/site",(req, resp)=>{
+    resp.render('index',{
+        title: 'Landing Page',
+        Heading: 'Real Estate'
+    })
+})
 
 
 // This is used to render pages
