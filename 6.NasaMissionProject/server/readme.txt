@@ -64,3 +64,29 @@ When we start server our node js create a master file and run it. But there is a
 This fork we can use it many time we want it create copy of that msater file which is called worker and these files run along side with
 master file.  
 This is also called round robin approach means if you create 2 forks() and there are 3 request. 1 req will resolved by 1 worker and 2 by 2nd worker and 3rd is by 1st worker.
+
+
+2.PM2 Tool:
+npm i pm2
+PM2 used node cluster module with additional capability
+
+commands:
+pm2 start servewr.js
+pm2 start server.js -l logs.txt -i max (-i max means run number of worker as my machine have number of cores)
+pm2 restart
+pm2 delete server
+pm2 list
+pm2 logs
+pm2 logs --lines 200 (Last 200 lines of logs)
+pm2 monit (moniter it will give live dashboard inside of cmd)
+
+#Zero Down Time Restart with pm2 
+pm2 restart server
+
+## Worker Threads
+const worker = require('worker_threads)
+It doesn't make node js multithreading becaue its single treaded from its core.
+It means its will responsed with web workers Api in web browser
+Worker Threads were introduced due to v8 feature called v8 isolatess.
+We cauld think it as isolated sandboxes that run javascripts code independently of each other.
+Worker threads use this and run code side by side in isolation
