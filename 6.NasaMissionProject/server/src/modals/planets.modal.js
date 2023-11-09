@@ -30,6 +30,7 @@ return new Promise((resolve, reject)=>{
   }))
   .on('data', (data) => {
     if (isHabitablePlanet(data)) {
+      console.log("Data",data)
       habitablePlanets.push(data);
     }
   })

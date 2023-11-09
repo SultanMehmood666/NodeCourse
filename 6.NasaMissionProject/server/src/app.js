@@ -7,6 +7,7 @@ const path = require('path');
 const morgan = require('morgan');
 const EventEmitter = require('events');
 
+
 // Parsing Data
 app.use(express.json());
 
@@ -21,6 +22,7 @@ app.use(cors({
 
 app.use(morgan('combined'));
 
+// Mongoose URL
 
 app.use(express.static(path.join(__dirname, "..", 'public')));
 
