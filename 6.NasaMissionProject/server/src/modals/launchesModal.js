@@ -1,3 +1,5 @@
+const Launches = require('./launches.mongoose')
+
 const launches = new Map();
 let latestFlightNumber = 100;
 

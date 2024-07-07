@@ -15,9 +15,7 @@ app.use(express.json());
 
 // cors security 
 app.use(cors({
-
     origin: 'http://localhost:3000'
-
 }));
 
 app.use(morgan('combined'));

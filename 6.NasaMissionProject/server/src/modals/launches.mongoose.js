@@ -13,8 +13,4 @@ const launchesSchema = new mongoose.Schema({
 })
 
 // Connect launches schemas with "launches" collection
-mongoose.model('Launch', launchesSchema)
-
-module.exports={
-    launchesSchema
-}
+module.exports=mongoose.model('Launch', launchesSchema)
